@@ -9,8 +9,6 @@ Implement the script into your code.
 ```
 Now create a new logic js file for your own code.
 
-
-
 ## Create a ics-event
 ```javascript
 var dateStart = new Date();        // Select when the event starts
@@ -28,6 +26,29 @@ js2Ics.description = "Put your description here";
 ## Change location of ics-event
 ```javascript
 js2Ics.location = "Put your location here";
+```
+
+## Enable recurrence (available since version 1.4)
+```javascript
+var mode = "DAILY";
+var type = "INTERVAL";
+var expires = new Date();
+expires.setDate(31);
+
+var repetition = new ICSRepetition(mode, type, 2, expires);
+if(repetition.validate()){
+    ics2js.setRepetition(repetition);
+}
+
+/*
+  Possible modes:
+  [SECONDLY, MINUTELY, HOURLY, DAILY, WEEKLY, MONTHLY, YEARLY]
+
+  Possible types:
+  [COUNT, INTERVAL, BYMONTHDAY]
+
+*/
+
 ```
 
 ## Enable a reminder
