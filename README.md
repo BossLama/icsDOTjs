@@ -25,6 +25,11 @@ var js2Ics = new icsDOTjs(dateStart, dateEnd, title);
 js2Ics.description("Put your description here");
 ```
 
+## Change location of ics-event
+```javascript
+js2Ics.location("Put your location here");
+```
+
 ## Enable a reminder
 ```javascript
 var reminderEnabled = true;
