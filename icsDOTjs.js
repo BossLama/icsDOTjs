@@ -31,9 +31,19 @@ class icsDOTjs{
 
 
         translated += "T";
-        translated += date.getHours();
-        translated += date.getMinutes();
-        translated += date.getSeconds();
+
+        if(date.getHours() < 11){
+            translated += "0" + (date.getHours() - 1);
+        }else translated += date.getHours() - 1;
+
+        if(date.getMinutes() < 10){
+            translated += "0" + date.getMinutes();
+        }else translated += date.getMinutes();
+
+        if(date.getSeconds() < 10){
+            translated += "0" + date.getSeconds();
+        }else translated += date.getSeconds();
+
         translated += "Z";
         return translated;
     }
@@ -91,14 +101,5 @@ class icsDOTjs{
         URL.revokeObjectURL(link.href);
     }
 
-    // Set the description of the meeting
-    description(description = "Erstellt icsDotJS"){
-        this.description = description;
-    }
-
-    // Set the location of the meeting
-    location(location = "Digital meeting"){
-        this.location = location;
-    }
 
 }
