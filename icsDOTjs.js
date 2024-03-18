@@ -95,14 +95,10 @@ class icsDOTjs{
     description(description = "Erstellt icsDotJS"){
         this.description = description;
     }
-}
 
-createIcs();
+    // Set the location of the meeting
+    location(location = "Digital meeting"){
+        this.location = location;
+    }
 
-/* Test function  */
-function createIcs(){
-    var js2Ics = new icsDOTjs(new Date(), new Date(), "Tests");
-
-    js2Ics.enableReminder(true);
-    js2Ics.export("hello");
 }
